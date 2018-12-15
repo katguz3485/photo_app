@@ -62,3 +62,4 @@ en:
       not_saved:
         one: "1 error prohibited this %{resource} from being saved:"
         other: "%{count} errors prohibited this %{resource} from being saved:"
+      size_error: "The image size should be less than 5 mb."
