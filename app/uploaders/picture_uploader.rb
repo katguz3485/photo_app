@@ -1,8 +1,6 @@
 class PictureUploader < CarrierWave::Uploader::Base
-  storage :fog
-  # Include RMagick or MiniMagick support:
-  # include CarrierWave::RMagick
   include CarrierWave::MiniMagick
+  storage :fog
   process resize_to_limit: [200, 200]
 
 
