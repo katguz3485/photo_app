@@ -34,6 +34,18 @@ Rails.application.configure do
 
   config.action_mailer.default_url_options = { :host => 'ror-photo-app.herokuapp.com/', :protocol => 'https'}
 
+
+  config.action_mailer.smtp_settings = {
+      :address => 'smtp.sendgrid.net',
+      :port => '587',
+      :authentication => :plain,
+      :user_name => Rails.application.credentials.dig(:sendgrid, :username),
+      :password => Rails.application.credentials.dig(:sendgrid, :password),
+      :domain => 'heroku.com',
+      :enable_starttls_auto => true
+  }
+
+
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
@@ -44,7 +56,7 @@ Rails.application.configure do
   # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for NGINX
 
   # Store uploaded files on the local file system (see config/storage.yml for options)
-  config.active_storage.service = :local
+  config.active_storage.service = :amazon
 
   # Mount Action Cable outside main process or domain
   # config.action_cable.mount_path = nil
