@@ -12,7 +12,6 @@ gem 'uglifier', '>= 1.3.0'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog-aws'
-
 gem 'devise'
 gem 'twitter-bootstrap-rails'
 gem 'devise-bootstrap-views'
